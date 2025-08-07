@@ -1,0 +1,14 @@
+services:
+  flask:
+    container_name: flask
+    build:
+      context: .
+      args:
+        FLASK_ENV: development
+    volumes:
+      - ./src:/app/src:ro
+    environment:
+      - FLASK_ENV=development
+    env_file:
+      - ./.env
+    command: python src/app.py

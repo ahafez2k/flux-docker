@@ -1,0 +1,27 @@
+services:
+  flask:
+    container_name: flask
+    build: .
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./.env
+    depends_on:
+      - postgres
+  
+  postgres:
+    image: postgres
+    restart: always
+    shm_size: 128mb
+    volumes:
+      - postgres-db:/var/lib/postgresql/data 
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+
+volumes:
+  postgres-db: {} 
+
+
+
+   

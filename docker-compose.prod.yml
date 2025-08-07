@@ -1,0 +1,15 @@
+services:
+  flask:
+    container_name: flask
+    build:
+      context: .
+      args:
+        - FLASK_ENV=production
+    environment:
+      - FLASK_ENV=production
+    env_file:
+      - ./.env
+    command: gunicorn -w 4 -b 0.0.0.0:5000 app:app
+
+      
+    
