@@ -1,6 +1,5 @@
 services:
   flask:
-    container_name: flask
     image: ahafez2k/flux_server
     build: .
     ports:

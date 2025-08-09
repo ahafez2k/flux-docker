@@ -1,6 +1,5 @@
 services:
   flask:
-    container_name: flask
     build:
       context: .
       args:
