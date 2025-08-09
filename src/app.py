@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return 'Hello, Ahmed from DockerHub'
+    return 'My name is Ahmed Elshabasy, iam Watchtour'
 
 # Build the database URI from environment variables
 db_user = os.getenv('DB_USER')
